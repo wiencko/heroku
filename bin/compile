@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# bin/compile <build-dir> <cache-dir> <env-dir>
+
+BUILD_DIR=${1:-}
+CACHE_DIR=${2:-}
+ENV_DIR=${3:-}
+
+echo "------> Generating .profile.d file to generate google-credentials.json at startup"
+mkdir -p $BUILD_DIR/.profile.d
+echo "{
+  "type": "service_account",
+  "project_id": "groupproject-258805",
+  "private_key_id": "26f2405e6ccd96bd733e6c75e71a3da060a8bf41",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQC7XYbEZl2JAJ0l\n0Y28zomd9OmgpSwkrxHPR1XMIf3IJgHD7jkwB4RPQ5ouUlfxUf1XpCH+rVU2HiZ9\nMZ5f6mo4AGj0Q1mWpow0njVTqNw8Nv0+IZqxYLlh+KEZr0ZjBf/tk8brFtPRBMYi\nTDdyocERpVq9Atre4fpji4ptYvoJ6+N8+Om+JTp8JGH1A4HSzohMgKyHYuvOKDmD\nyV5J1/Qd4PYL29WYO8N9uv/Nln5/k6+poM47VIIW+gu3+REE2ZG8h6+LA4qs/1xn\nzh2d7qPB7j/VHyCdnZR50/FWOMZbDGDSyoe5JH/73krhle25XvLFr0E8MYyYzxD7\nl/UvtvQ5AgMBAAECggEAE56mbjI8bOxXKFbGUW0swLE81iU5p0E8W5DQGYs9Koxd\nTrWnQCHnX0/4SQ23FwZjgZ4Gr8cZh0xWsjEkEQ3oT8MuOlbDnriDsb5X3fHulvEY\nqV0GOHkFDI7nGrwNgjDGhQuejq9CIK7v6vdBbqPkxlri8qwl/GUcLbiW1x/ASFHA\nuWsN08k/7hqXNo3ajIg2e1FqpY9UILlCLO3JC2f8aVpgoWOJfknlct6LjxquPcGV\n7g+x6Wl1I6lG0QQK10Go1Y/5cdoixL+UMixl9CQkyksZ0KZRoXtIq2H89jwSnbB3\nBNWOjFcpOOS9eVVrDMsbYd24awCtgY3+LO4KejPS4QKBgQDxCAGMxv+KbkRi+WA3\nAVRGiEqtP8aPdKnrPTlkl03zLb3VsYKXR23j6KXgxL/BiHm3sI1GjFxce9Jd6/hB\nXzLQ3seQiB2emxCJKB/EIuWPtZZkvmAHwDQPyi251lYdMl3WG6UsnDqgNZkQt1L9\nd8oGF6vMrR1lU/bNJHAoFPZ5IQKBgQDHAFJhFFWXYiXCqseuwjXuKwq2Yoflvbo8\n1EoKp297pjbVI50K0xwGUkujaOeyx3F+kC3HWOV3GusBbNQagjyBQ8hf0GGq2WQi\nAEQn2ywb3sy23y2K2AjKEbDmlafF/610+sifr28XiVrtxilaRjEzdtLjuD6GcxGL\nl4t/j2EgGQKBgQDuvXFbkZh383SFXGDy2rwxCLp/FFaGrZXIzeHVQxEQt9P6oFKr\nqTKttjjng7oz5gw56ARnRowNhw/9u8cwaS0aOjANduVvvkQItteQHMipKcIHk5Hm\n23g105qrIiQ10zei5csbfruLCMvOBOeM7GQM2NFwcGBXh21EEL2O1gS0QQKBgEJG\nJylRnle2RiEYwzu+TjutdfnbwqqOjzGm+ammrYgeiPBe1fQ+7nxkd/BKBbASoAeo\neLaFMpaCDnYBCnpxmTjrnBXczkoZ8DEqqYgkhAIcJ01X8lDlNbgmQCXq/V8BkYD9\n7EbSJEtQYUoCzs7TxZsAHafdOmWIePVmWPz4gT4xAoGBAN8rGDYnKGAtJ0M1ilO5\n/Q1WrpOAvo89Valq5RP5KxHugNZsDOsFm0/K/4DdRuYiLa9UldQ937lqPomVMqkx\nOCJ/UTWHYWiX50xLCUk5p8aUFiKMfZxDYaXQParoJpOiwJPnz2RYXBX6HNI4MRlI\n8/+9H4Kj7vA659wkVyVbOZEi\n-----END PRIVATE KEY-----\n",
+  "client_email": "groupprojectkey@groupproject-258805.iam.gserviceaccount.com",
+  "client_id": "109562497372305465035",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/groupprojectkey%40groupproject-258805.iam.gserviceaccount.com"
+} " > /app/google-credentials.json"
