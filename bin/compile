@@ -7,7 +7,7 @@ ENV_DIR=${3:-}
 
 echo "------> Generating .profile.d file to generate google-credentials.json at startup"
 mkdir -p $BUILD_DIR/.profile.d
-echo "{
+echo '{
   "type": "service_account",
   "project_id": "groupproject-258805",
   "private_key_id": "26f2405e6ccd96bd733e6c75e71a3da060a8bf41",
@@ -18,4 +18,4 @@ echo "{
   "token_uri": "https://oauth2.googleapis.com/token",
   "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
   "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/groupprojectkey%40groupproject-258805.iam.gserviceaccount.com"
-} " > $BUILD_DIR/.profile.d/app/google-credentials.json
+}' > $BUILD_DIR/.profile.d/app/google-credentials.json
